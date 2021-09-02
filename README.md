@@ -1,3 +1,15 @@
+## 一、todoList 案例相关知识点
+
+1.拆分组件、实现静态组件，注意 className、style 的写法
+2、动态初始化列表。如何确定将数据放在哪个组件中？
+—— 在某个组件使用：放在自身的 state 中
+—— 在某些组件中使用：放在他们共同的福组件 state 中（官方称此操作为：状态提升）
+3、关于父子组件之间的通信： 1. 【 父组件 】给【 子组件 】传递数据：通过 props 传递 2. 【 子组件 】给【 父组件 】传递数据：通过 props 传递，要求父提前给子传递一个函数
+4、注意 defaultChecked 和 checked 的区别，类似的还有 defaultValue 和 value
+5、状态在哪里。操作状态的方法就在哪里
+
+# Create React App
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -9,23 +21,23 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 

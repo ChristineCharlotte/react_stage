@@ -71,6 +71,33 @@ export default class App extends Component {
     this.setState({ todos: newTodos });
   };
 
+  /**
+   * checkAllTodo 用于全选
+   */
+  checkAllTodo = (done) => {
+    //获取原来的todos
+    const { todos } = this.state;
+    //加工数据
+    const newTodos = todos.map((todoObj) => {
+      return { ...todoObj, done };
+    });
+    debugger;
+    //更新状态
+    this.setState({ todos: newTodos });
+  };
+
+  //clearAllDone 用于清除所有已完成的
+  clearAllDone = () => {
+    //获取原来的todos
+    const { todos } = this.state;
+    //过滤数据
+    const newTodos = todos.filter((todoObj) => {
+      return !todoObj.done;
+    });
+    //更新状态
+    this.setState({ todos: newTodos });
+  };
+
   render() {
     const { todos } = this.state;
     return (
@@ -82,7 +109,11 @@ export default class App extends Component {
             updateToDo={this.updateToDo}
             deleteToDo={this.deleteToDo}
           ></List>
-          <Footer></Footer>
+          <Footer
+            todos={todos}
+            checkAllTodo={this.checkAllTodo}
+            clearAllDone={this.clearAllDone}
+          ></Footer>
         </div>
       </div>
     );
