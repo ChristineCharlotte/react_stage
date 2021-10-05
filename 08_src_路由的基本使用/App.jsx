@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { NavLink, Route } from 'react-router-dom';
-import Home from './pages/Home'; // About是路由组件
-import About from './pages/About'; // About是路由组件
-import Header from './components/Header'; // Header是一般组件
+import { Link, Route } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
 export default class App extends Component {
   render() {
     return (
       <div>
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
-            <Header a={1} />
+            <div className="page-header">
+              <h2>React Router Demo</h2>
+            </div>
           </div>
         </div>
         <div className="row">
@@ -25,26 +26,19 @@ export default class App extends Component {
 
               {/* 在react中靠路由链接实现切换组件 -- 编写路由链接*/}
 
-              <NavLink
-                activeClassName="demo"
-                className="list-group-item"
-                to="/about"
-              >
+              <Link className="list-group-item" to="/about">
                 About
-              </NavLink>
-              <NavLink
-                activeClassName="demo"
-                className="list-group-item"
-                to="/home"
-              >
+              </Link>
+              <Link className="list-group-item" to="/home">
                 Home
-              </NavLink>
+              </Link>
             </div>
           </div>
           <div className="col-xs-6">
             <div className="panel">
               <div className="panel-body">
                 {/* 注册路由 */}
+
                 <Route path="/about" component={About} />
                 <Route path="/home" component={Home} />
               </div>

@@ -3,13 +3,13 @@ import React from 'react';
 // 引入React DOM
 import ReactDOM from 'react-dom';
 // BrowserRouter
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 // 引入App
 import App from './App';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
